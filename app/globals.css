@@ -2,26 +2,81 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-}
-
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+@layer base {
+  :root {
+    --background: 220 44% 100%;
+    --foreground: 220 67% 0%;
+    --muted: 220 39% 92%;
+    --muted-foreground: 220 13% 27%;
+    --popover: 220 44% 100%;
+    --popover-foreground: 220 67% 0%;
+    --card: 0 0% 99%;
+    --card-foreground: 0 0% 0%;
+    --border: 220 2% 93%;
+    --input: 220 2% 93%;
+    --primary: 220 66% 58%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 220 7% 91%;
+    --secondary-foreground: 220 7% 31%;
+    --accent: 220 13% 82%;
+    --accent-foreground: 220 13% 22%;
+    --destructive: 0 86% 45%;
+    --destructive-foreground: 0 0% 100%;
+    --ring: 220 66% 58%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 220 43% 4%;
+    --foreground: 220 16% 99%;
+    --muted: 220 39% 8%;
+    --muted-foreground: 220 13% 73%;
+    --popover: 220 43% 4%;
+    --popover-foreground: 220 16% 99%;
+    --card: 220 43% 5%;
+    --card-foreground: 0 0% 100%;
+    --border: 220 2% 13%;
+    --input: 220 2% 13%;
+    --primary: 220 66% 58%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 220 7% 9%;
+    --secondary-foreground: 220 7% 69%;
+    --accent: 220 13% 16%;
+    --accent-foreground: 220 13% 76%;
+    --destructive: 0 86% 49%;
+    --destructive-foreground: 0 0% 100%;
+    --ring: 220 66% 58%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+.mdx-content > *:last-child {
+  margin-bottom: 0px;
+}
+
+.mdx-content > *:first-child {
+  margin-top: 0px;
+}
+
+.prose code .highlighted {
+  background: hsl(var(--primary) / 0.2) !important;
+  transition: background-color 0.5s;
+  margin: 0 -1.5rem;
+  padding: 0 1.5rem;
+  width: calc(100% + 48px);
+  display: inline-block;
 }
