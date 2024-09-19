@@ -1,8 +1,9 @@
 import { Post } from "@/lib/posts";
 import { ImageResponse } from "next/og";
 import { OgImage } from "./OgImage";
+import { getUrl } from "./getUrl";
 
-const URL = process.env.VERCEL_URL ?? "http://localhost:3000";
+const URL = getUrl();
 
 export const alt = "Codelynx posts image preview";
 export const size = {
